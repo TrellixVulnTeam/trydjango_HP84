@@ -7,6 +7,8 @@ from django.db import models
 class Product(models.Model):
 # Model fields get a name and an instruction on the type 
 # and length of expected data 
-	title = models.TextField()
-	description = models.TextField()
-	price = models.TextField()
+	title = models.CharField(max_length=120) #max_length is essential for CharField
+	#price = models.TextField()
+	description = models.TextField(blank=True, null=True)
+	price = models.DecimalField(decimal_places=2, max_digits=10000)
+	summary = models.TextField()
