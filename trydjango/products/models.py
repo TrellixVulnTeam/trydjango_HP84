@@ -9,6 +9,7 @@ class Product(models.Model):
 # and length of expected data 
 	title = models.CharField(max_length=120) #max_length is essential for CharField
 	#price = models.TextField()
-	description = models.TextField(blank=True, null=True)
+	description = models.TextField(blank=False, null=True)
 	price = models.DecimalField(decimal_places=2, max_digits=10000)
 	summary = models.TextField()
+	featured = models.BooleanField(default=True)
