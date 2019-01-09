@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>About Us</h1>
+<p style="color: red; font-weight: ">This is proof that I remembered how to do this!</p>
+<p>This is proof that this is updating when I hit save!</p>
+
+<p>
+	{{my_text}} {{my_number}} {{my_list}}
+</p>
+
+<ul>
+	{% for my_sub_item in my_list %}
+		{% if my_sub_item == 123 %}
+			<li>{{forloop.counter}} - {{my_sub_item|add:22}}</li>
+			{% elif my_sub_item == 'ABC'%}
+				<li>{{forloop.counter}} - This is some text</li>
+			{% else %}
+				<li>{{forloop.counter}} - {{my_sub_item}}</li>
+		{% endif %}
+	{% endfor %}
+</ul>
+
+{% endblock %}
+
